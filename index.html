@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevPort | Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="main.css">
+    <style>
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: 1;
+            pointer-events: none;
+            background: url('https://www.transparenttextures.com/patterns/circuit-board.png');
+            opacity: 0.12;
+            mix-blend-mode: lighten;
+        }
+        .section-title span, .logo {
+            text-shadow: 0 0 8px #00ffe7, 0 0 16px #00ffe7;
+        }
+        .cyber-flicker {
+            animation: flicker 2s infinite alternate;
+        }
+        @keyframes flicker {
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
+            20%, 22%, 24%, 55% { opacity: 0.4; }
+        }
+        
+        body::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: 1;
+            pointer-events: none;
+            background: url('https://www.transparenttextures.com/patterns/circuit-board.png');
+            opacity: 0.12;
+            mix-blend-mode: lighten;
+        }
+
+        
+        /*index style*/
+        .cyber-bg {
+            /* ...existing code... */
+            opacity: 0.2;
+        }
+        .matrix-bg {
+            /* ...existing code... */
+            opacity: 0.15;
+        }
+        body::after {
+            /* ...existing code... */
+           opacity: 0.15; 
+        } 
+        
+        @media (max-width: 900px) {
+    .nav-links {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: rgba(255,255,255,0.98);
+        flex-direction: column;
+        gap: 0;
+        display: none;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+        padding: 16px 0;
+        z-index: 1001;
+    }
+    .nav-links.show {
+        display: flex;
+    }
+    .icon {
+        display: block;
+        font-size: 2rem;
+        color: var(--primary);
+        cursor: pointer;
+        margin-left: 16px;
+        z-index: 1100;
+        background: none;
+        border: none;
+    }
+}
+
+@media (max-width:768px) {
+    .nav-links { 
+        display:none; 
+        flex-direction:column; 
+        position:absolute; 
+        top:80px; 
+        left:0; 
+        width:100%; 
+        background:#fff; 
+        padding:20px; 
+        box-shadow:0 10px 20px rgba(0,0,0,0.1);
+    }
+    .nav-links.show { display:flex; }
+    .icon { display:block; font-size:1.5rem; color:var(--dark);}
+}
+    </style>
+</head>
+<body>
+    <!-- Windy Background Effect -->
+    <div class="windy-bg">
+        <div class="wind-wave wave1"></div>
+        <div class="wind-wave wave2"></div>
+    </div>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">DevPort</a>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="projects.html" class="active">Projects</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Vertical Navigation Bar (for mobile) -->
+    <div class="vertical-navbar">
+        <a href="index.html" class="active"><i class="fa fa-home"></i><span>Home</span></a>
+        <a href="projects.html"><i class="fa fa-code"></i><span>Projects</span></a>
+        <a href="about.html"><i class="fa fa-user"></i><span>About</span></a>
+        <a href="contact.html"><i class="fa fa-envelope"></i><span>Contact</span></a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container" style="position: center; min-height: 320px; perspective: 900px;">
+            <div class="hero-content">
+                <h1>Hi, I'm <span>OMOR FARUK</span></h1>
+                <h2>AI Expert & Full Stack Web Developer</h2>
+                <p>I build intelligent, beautiful, and responsive websites and AI solutions that deliver real results.</p>
+            </div>
+            <div class="hero-image" style="position: relative; min-height: 320px; perspective: 900px;">
+                <img 
+                    src="me.png" 
+                    alt="Developer Image" 
+                    class="hero-photo-3d"
+                    style="z-index:1; position:relative; border-radius: 50%; box-shadow: 0 12px 40px rgba(30,40,80,0.18); width: 220px; height: 220px; object-fit: cover; transition: transform 0.7s cubic-bezier(.25,.8,.25,1), box-shadow 0.7s;">
+                <!-- Animated AI/ML/Dev/IT bubbles -->
+                <div class="bubble-logo ai-bubble bubble-3d">AI</div>
+                <div class="bubble-logo ml-bubble bubble-3d">ML</div>
+                <div class="bubble-logo dev-bubble bubble-3d">Dev</div>
+                <div class="bubble-logo it-bubble bubble-3d">IT</div>
+                <!-- View My Work button centered over the photo -->
+                <a href="projects.html" class="btn"
+                   style="
+                    position: absolute;
+                    left: 10%;
+                    top: 80%;
+                    transform: translate(-50%, -50%);
+                    z-index: 3;
+                    padding: 18px 38px;
+                    font-size: 1.3rem;
+                    opacity: 0.93;
+                    ">
+                    View My Work
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025  DevPort. All rights reserved.</p>
+        </div>
+    </footer>
+    <div class="cyber-bg"></div>
+    <div class="matrix-bg"></div>
+ 
+</body>
+</html>
